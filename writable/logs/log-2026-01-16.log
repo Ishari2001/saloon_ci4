@@ -1,0 +1,14 @@
+CRITICAL - 2026-01-16 16:22:54 --> ErrorException: Undefined variable $totalAppointments
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\admin\dashboard.php on line 70.
+ 1 APPPATH\Views\admin\dashboard.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalAppointments', 'C:\\xampp\\htdocs\\SalonAppPHP\\app\\Views\\admin\\dashboard.php', 70)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Views\\admin\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 5 APPPATH\Controllers\Admin.php(9): view('admin/dashboard')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

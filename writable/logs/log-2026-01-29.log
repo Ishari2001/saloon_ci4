@@ -1,0 +1,162 @@
+DEBUG - 2026-01-29 05:06:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 05:06:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 05:07:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 05:07:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 05:08:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 05:09:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 05:09:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 05:20:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 05:20:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 06:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 06:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 06:15:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 06:15:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 06:15:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 06:15:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 06:15:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 06:20:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 06:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 06:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 06:33:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 06:33:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 06:33:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-01-29 06:40:05 --> Error: Class "BaseController" not found
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Controllers\Admin\BaseAdminController.php on line 5.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(315): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Admin\\BaseAdminController.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\BaseAdminController')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(9): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\BaseAdminController')
+ 5 SYSTEMPATH\Autoloader\Autoloader.php(315): include_once('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Admin\\Dashboard.php')
+ 6 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Admin\\Dashboard.php')
+ 7 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\Dashboard')
+ 8 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\Dashboard')
+ 9 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Admin\\Dashboard', true)
+10 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-29 06:40:51 --> Error: Class "App\Controllers\Admin\BaseAdminController" not found
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Controllers\Admin\Dashboard.php on line 9.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(315): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Admin\\Dashboard.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\Dashboard')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\Dashboard')
+ 5 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Admin\\Dashboard', true)
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-29 06:42:05 --> Error: Class "App\Controllers\Admin\BaseAdminController" not found
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Controllers\Admin\Dashboard.php on line 9.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(315): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Admin\\Dashboard.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\Dashboard')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\Dashboard')
+ 5 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Admin\\Dashboard', true)
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-29 06:42:07 --> Error: Class "App\Controllers\Admin\BaseAdminController" not found
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Controllers\Admin\Dashboard.php on line 9.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(315): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Admin\\Dashboard.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\Dashboard')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\Dashboard')
+ 5 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Admin\\Dashboard', true)
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-01-29 06:42:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 06:42:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-01-29 06:42:17 --> Error: Class "App\Controllers\Admin\BaseAdminController" not found
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Controllers\Admin\Dashboard.php on line 9.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(315): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Admin\\Dashboard.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\Dashboard')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\Dashboard')
+ 5 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Admin\\Dashboard', true)
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-29 06:42:46 --> Error: Class "App\Controllers\Admin\BaseAdminController" not found
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Controllers\Admin\Dashboard.php on line 10.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(315): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Admin\\Dashboard.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\Dashboard')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\Dashboard')
+ 5 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Admin\\Dashboard', true)
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-29 06:42:47 --> Error: Class "App\Controllers\Admin\BaseAdminController" not found
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Controllers\Admin\Dashboard.php on line 10.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(315): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Admin\\Dashboard.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\Dashboard')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\Dashboard')
+ 5 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Admin\\Dashboard', true)
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-01-29 06:43:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 06:47:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 06:47:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 06:48:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 07:41:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 07:42:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 07:42:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-01-29 07:43:52 --> ErrorException: Undefined array key "name"
+[Method: POST, Route: booking/confirm]
+in APPPATH\Controllers\Booking.php on line 177.
+ 1 APPPATH\Controllers\Booking.php(177): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Booking.php', 177)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Booking->confirm()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-29 07:47:53 --> ErrorException: Undefined array key "name"
+[Method: POST, Route: booking/confirm]
+in APPPATH\Controllers\Booking.php on line 197.
+ 1 APPPATH\Controllers\Booking.php(197): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Booking.php', 197)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Booking->confirm()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-29 07:50:49 --> ErrorException: Undefined array key "name"
+[Method: POST, Route: booking/confirm]
+in APPPATH\Controllers\Booking.php on line 197.
+ 1 APPPATH\Controllers\Booking.php(197): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Booking.php', 197)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Booking->confirm()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-01-29 08:32:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 08:32:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 08:48:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 08:48:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 08:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-29 08:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

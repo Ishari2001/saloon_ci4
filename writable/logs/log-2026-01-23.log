@@ -1,0 +1,1138 @@
+DEBUG - 2026-01-23 02:18:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 02:18:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-01-23 02:19:14 --> mysqli_sql_exception: Lock wait timeout exceeded; try restarting transaction in C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appoint...', 0)
+#1 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appoint...')
+#2 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appoint...')
+#3 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appoint...', Array, false)
+#4 C:\xampp\htdocs\SalonAppPHP\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\SalonAppPHP\system\BaseModel.php(1010): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\SalonAppPHP\system\Model.php(860): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\SalonAppPHP\app\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', Array)
+#8 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+#9 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+#10 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\SalonAppPHP\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2026-01-23 02:19:14 --> CodeIgniter\Database\Exceptions\DatabaseException: Lock wait timeout exceeded; try restarting transaction
+[Method: POST, Route: admin/appointments/update/5]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:19:14 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Lock wait timeout exceeded; try restarting transaction
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:18:23\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:18:23\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:19:14 --> [Caused by] mysqli_sql_exception: Lock wait timeout exceeded; try restarting transaction
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:18:23\'
+WHERE `appointments`.`id` IN (\'5\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:18:23\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:18:23\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-01-23 02:19:18 --> mysqli_sql_exception: Lock wait timeout exceeded; try restarting transaction in C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appoint...', 0)
+#1 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appoint...')
+#2 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appoint...')
+#3 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appoint...', Array, false)
+#4 C:\xampp\htdocs\SalonAppPHP\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\SalonAppPHP\system\BaseModel.php(1010): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\SalonAppPHP\system\Model.php(860): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\SalonAppPHP\app\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', Array)
+#8 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+#9 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+#10 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\SalonAppPHP\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2026-01-23 02:19:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Lock wait timeout exceeded; try restarting transaction
+[Method: POST, Route: admin/appointments/update/5]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:19:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Lock wait timeout exceeded; try restarting transaction
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:18:27\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:18:27\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:19:18 --> [Caused by] mysqli_sql_exception: Lock wait timeout exceeded; try restarting transaction
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:18:27\'
+WHERE `appointments`.`id` IN (\'5\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:18:27\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:18:27\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-01-23 02:19:59 --> mysqli_sql_exception: Lock wait timeout exceeded; try restarting transaction in C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appoint...', 0)
+#1 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appoint...')
+#2 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appoint...')
+#3 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appoint...', Array, false)
+#4 C:\xampp\htdocs\SalonAppPHP\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\SalonAppPHP\system\BaseModel.php(1010): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\SalonAppPHP\system\Model.php(860): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\SalonAppPHP\app\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', Array)
+#8 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+#9 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+#10 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\SalonAppPHP\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2026-01-23 02:19:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Lock wait timeout exceeded; try restarting transaction
+[Method: POST, Route: admin/appointments/update/5]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:19:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Lock wait timeout exceeded; try restarting transaction
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:19:08\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:19:08\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:19:59 --> [Caused by] mysqli_sql_exception: Lock wait timeout exceeded; try restarting transaction
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:19:08\'
+WHERE `appointments`.`id` IN (\'5\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:19:08\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:19:08\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-01-23 02:20:02 --> mysqli_sql_exception: Lock wait timeout exceeded; try restarting transaction in C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appoint...', 0)
+#1 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appoint...')
+#2 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appoint...')
+#3 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appoint...', Array, false)
+#4 C:\xampp\htdocs\SalonAppPHP\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\SalonAppPHP\system\BaseModel.php(1010): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\SalonAppPHP\system\Model.php(860): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\SalonAppPHP\app\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', Array)
+#8 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+#9 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+#10 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\SalonAppPHP\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2026-01-23 02:20:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Lock wait timeout exceeded; try restarting transaction
+[Method: POST, Route: admin/appointments/update/5]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Lock wait timeout exceeded; try restarting transaction
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:19:11\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:19:11\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:02 --> [Caused by] mysqli_sql_exception: Lock wait timeout exceeded; try restarting transaction
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:19:11\'
+WHERE `appointments`.`id` IN (\'5\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:19:11\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:19:11\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-01-23 02:20:11 --> mysqli_sql_exception: Lock wait timeout exceeded; try restarting transaction in C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appoint...', 0)
+#1 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appoint...')
+#2 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appoint...')
+#3 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appoint...', Array, false)
+#4 C:\xampp\htdocs\SalonAppPHP\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\SalonAppPHP\system\BaseModel.php(1010): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\SalonAppPHP\system\Model.php(860): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\SalonAppPHP\app\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', Array)
+#8 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+#9 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+#10 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\SalonAppPHP\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2026-01-23 02:20:11 --> mysqli_sql_exception: Lock wait timeout exceeded; try restarting transaction in C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appoint...', 0)
+#1 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appoint...')
+#2 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appoint...')
+#3 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appoint...', Array, false)
+#4 C:\xampp\htdocs\SalonAppPHP\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\SalonAppPHP\system\BaseModel.php(1010): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\SalonAppPHP\system\Model.php(860): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\SalonAppPHP\app\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', Array)
+#8 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+#9 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+#10 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\SalonAppPHP\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2026-01-23 02:20:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Lock wait timeout exceeded; try restarting transaction
+[Method: POST, Route: admin/appointments/update/5]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Lock wait timeout exceeded; try restarting transaction
+[Method: POST, Route: admin/appointments/update/5]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Lock wait timeout exceeded; try restarting transaction
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'cancelled\', `updated_at` = \'2026-01-23 02:19:14\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'cancelled\', `updated_at` = \'2026-01-23 02:19:14\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Lock wait timeout exceeded; try restarting transaction
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'cancelled\', `updated_at` = \'2026-01-23 02:19:13\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'cancelled\', `updated_at` = \'2026-01-23 02:19:13\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> [Caused by] mysqli_sql_exception: Lock wait timeout exceeded; try restarting transaction
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appointments` SET `status` = \'cancelled\', `updated_at` = \'2026-01-23 02:19:14\'
+WHERE `appointments`.`id` IN (\'5\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'cancelled\', `updated_at` = \'2026-01-23 02:19:14\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'cancelled\', `updated_at` = \'2026-01-23 02:19:14\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> [Caused by] mysqli_sql_exception: Lock wait timeout exceeded; try restarting transaction
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appointments` SET `status` = \'cancelled\', `updated_at` = \'2026-01-23 02:19:13\'
+WHERE `appointments`.`id` IN (\'5\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'cancelled\', `updated_at` = \'2026-01-23 02:19:13\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'cancelled\', `updated_at` = \'2026-01-23 02:19:13\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-01-23 02:20:11 --> mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appoint...', 0)
+#1 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appoint...')
+#2 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appoint...')
+#3 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appoint...', Array, false)
+#4 C:\xampp\htdocs\SalonAppPHP\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\SalonAppPHP\system\BaseModel.php(1010): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\SalonAppPHP\system\Model.php(860): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\SalonAppPHP\app\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', Array)
+#8 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+#9 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+#10 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\SalonAppPHP\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2026-01-23 02:20:11 --> mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appoint...', 0)
+#1 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appoint...')
+#2 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appoint...')
+#3 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appoint...', Array, false)
+#4 C:\xampp\htdocs\SalonAppPHP\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\SalonAppPHP\system\BaseModel.php(1010): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\SalonAppPHP\system\Model.php(860): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\SalonAppPHP\app\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('9', Array)
+#8 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('9')
+#9 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+#10 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\SalonAppPHP\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2026-01-23 02:20:11 --> mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appoint...', 0)
+#1 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appoint...')
+#2 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appoint...')
+#3 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appoint...', Array, false)
+#4 C:\xampp\htdocs\SalonAppPHP\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\SalonAppPHP\system\BaseModel.php(1010): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\SalonAppPHP\system\Model.php(860): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\SalonAppPHP\app\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('3', Array)
+#8 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('3')
+#9 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+#10 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\SalonAppPHP\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2026-01-23 02:20:11 --> mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appoint...', 0)
+#1 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appoint...')
+#2 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appoint...')
+#3 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appoint...', Array, false)
+#4 C:\xampp\htdocs\SalonAppPHP\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\SalonAppPHP\system\BaseModel.php(1010): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\SalonAppPHP\system\Model.php(860): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\SalonAppPHP\app\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('3', Array)
+#8 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('3')
+#9 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+#10 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\SalonAppPHP\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2026-01-23 02:20:11 --> mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appoint...', 0)
+#1 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appoint...')
+#2 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appoint...')
+#3 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appoint...', Array, false)
+#4 C:\xampp\htdocs\SalonAppPHP\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\SalonAppPHP\system\BaseModel.php(1010): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\SalonAppPHP\system\Model.php(860): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\SalonAppPHP\app\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', Array)
+#8 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+#9 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+#10 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\SalonAppPHP\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2026-01-23 02:20:11 --> CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+[Method: POST, Route: admin/appointments/update/5]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+[Method: POST, Route: admin/appointments/update/9]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('9', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('9')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:19:47\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:19:47\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+[Method: POST, Route: admin/appointments/update/3]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('3', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('3')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+[Method: POST, Route: admin/appointments/update/5]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+[Method: POST, Route: admin/appointments/update/3]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('3', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('3')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'completed\', `updated_at` = \'2026-01-23 02:18:15\'
+WHERE `appointments`.`id` IN (\'9\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'completed\', `updated_at` = \'2026-01-23 02:18:15\'
+WHERE `appointments`.`id` IN (\'9\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('9', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('9')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'pending\', `updated_at` = \'2026-01-23 02:19:31\'
+WHERE `appointments`.`id` IN (\'3\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'pending\', `updated_at` = \'2026-01-23 02:19:31\'
+WHERE `appointments`.`id` IN (\'3\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('3', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('3')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> [Caused by] mysqli_sql_exception: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:19:47\'
+WHERE `appointments`.`id` IN (\'5\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:19:47\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:19:47\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:18:20\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:18:20\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'pending\', `updated_at` = \'2026-01-23 02:19:32\'
+WHERE `appointments`.`id` IN (\'3\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'pending\', `updated_at` = \'2026-01-23 02:19:32\'
+WHERE `appointments`.`id` IN (\'3\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('3', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('3')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> [Caused by] mysqli_sql_exception: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appointments` SET `status` = \'completed\', `updated_at` = \'2026-01-23 02:18:15\'
+WHERE `appointments`.`id` IN (\'9\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'completed\', `updated_at` = \'2026-01-23 02:18:15\'
+WHERE `appointments`.`id` IN (\'9\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'completed\', `updated_at` = \'2026-01-23 02:18:15\'
+WHERE `appointments`.`id` IN (\'9\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('9', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('9')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> [Caused by] mysqli_sql_exception: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appointments` SET `status` = \'pending\', `updated_at` = \'2026-01-23 02:19:31\'
+WHERE `appointments`.`id` IN (\'3\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'pending\', `updated_at` = \'2026-01-23 02:19:31\'
+WHERE `appointments`.`id` IN (\'3\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'pending\', `updated_at` = \'2026-01-23 02:19:31\'
+WHERE `appointments`.`id` IN (\'3\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('3', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('3')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> [Caused by] mysqli_sql_exception: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:18:20\'
+WHERE `appointments`.`id` IN (\'5\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:18:20\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'confirmed\', `updated_at` = \'2026-01-23 02:18:20\'
+WHERE `appointments`.`id` IN (\'5\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('5')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 02:20:11 --> [Caused by] mysqli_sql_exception: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `appointments` SET `status` = \'pending\', `updated_at` = \'2026-01-23 02:19:32\'
+WHERE `appointments`.`id` IN (\'3\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `appointments` SET `status` = \'pending\', `updated_at` = \'2026-01-23 02:19:32\'
+WHERE `appointments`.`id` IN (\'3\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `appointments` SET `status` = \'pending\', `updated_at` = \'2026-01-23 02:19:32\'
+WHERE `appointments`.`id` IN (\'3\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `appointments` SET `status` = :status:, `updated_at` = :updated_at:
+WHERE `appointments`.`id` IN :appointments.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1010): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Admin\Appointments.php(57): CodeIgniter\Model->update('3', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Appointments->updateStatus('3')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Appointments))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-01-23 02:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 02:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 02:25:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 03:23:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 03:24:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 03:25:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 03:53:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:17:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:18:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:18:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:24:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:26:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:26:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:27:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:27:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:27:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-01-23 04:31:18 --> Error: Class "App\Controllers\Admin\BaseAdminController" not found
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Controllers\Admin\Dashboard.php on line 9.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(315): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Admin\\Dashboard.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\Dashboard')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\Dashboard')
+ 5 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Admin\\Dashboard', true)
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 04:32:08 --> Error: Class "App\Models\BaseAdminController" not found
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Controllers\Admin\Dashboard.php on line 10.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(315): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Admin\\Dashboard.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\Dashboard')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\Dashboard')
+ 5 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Admin\\Dashboard', true)
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 04:32:11 --> Error: Class "App\Models\BaseAdminController" not found
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Controllers\Admin\Dashboard.php on line 10.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(315): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Admin\\Dashboard.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\Dashboard')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\Dashboard')
+ 5 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Admin\\Dashboard', true)
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-01-23 04:32:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:32:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-01-23 04:33:00 --> Error: Class "App\Models\BaseAdminController" not found
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Controllers\Admin\Dashboard.php on line 10.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(315): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Admin\\Dashboard.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\Dashboard')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\Dashboard')
+ 5 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Admin\\Dashboard', true)
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 04:34:47 --> Error: Class "App\Controllers\Admin\BaseAdminController" not found
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Controllers\Admin\Dashboard.php on line 9.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(315): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Admin\\Dashboard.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\Dashboard')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\Dashboard')
+ 5 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Admin\\Dashboard', true)
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-01-23 04:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:35:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:35:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:35:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:35:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:35:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:35:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:36:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 04:36:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:11:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:11:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:11:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:11:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:11:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-01-23 05:11:19 --> mysqli_sql_exception: Table 'saloon.settings' doesn't exist in C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\SalonAppPHP\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\SalonAppPHP\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\SalonAppPHP\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\SalonAppPHP\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\SalonAppPHP\app\Models\SettingModel.php(16): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\SalonAppPHP\app\Controllers\Admin\Settings.php(14): App\Models\SettingModel->getValue('open_time')
+#8 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(933): App\Controllers\Admin\Settings->index()
+#9 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Settings))
+#10 C:\xampp\htdocs\SalonAppPHP\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\SalonAppPHP\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\SalonAppPHP\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2026-01-23 05:11:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'saloon.settings' doesn't exist
+[Method: GET, Route: admin/settings]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `settings`
+WHERE `key` = :key:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\SettingModel.php(16): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Admin\Settings.php(14): App\Models\SettingModel->getValue('open_time')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Settings->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Settings))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 05:11:19 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'saloon.settings' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `settings`
+WHERE `key` = \'open_time\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `settings`
+WHERE `key` = \'open_time\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `settings`
+WHERE `key` = :key:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Models\SettingModel.php(16): CodeIgniter\BaseModel->first()
+ 7 APPPATH\Controllers\Admin\Settings.php(14): App\Models\SettingModel->getValue('open_time')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Settings->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Settings))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 05:11:19 --> [Caused by] mysqli_sql_exception: Table 'saloon.settings' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `settings`
+WHERE `key` = \'open_time\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `settings`
+WHERE `key` = \'open_time\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `settings`
+WHERE `key` = \'open_time\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `settings`
+WHERE `key` = :key:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Models\SettingModel.php(16): CodeIgniter\BaseModel->first()
+ 8 APPPATH\Controllers\Admin\Settings.php(14): App\Models\SettingModel->getValue('open_time')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Settings->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Settings))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-01-23 05:11:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-01-23 05:17:18 --> Error: Class "App\Controllers\BaseAdminController" not found
+[Method: GET, Route: admin/settings]
+in APPPATH\Controllers\Admin\Settings.php on line 8.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(315): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Admin\\Settings.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\Settings')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\Settings')
+ 5 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Admin\\Settings', true)
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 05:22:19 --> Error: Class "App\Controllers\BaseAdminController" not found
+[Method: GET, Route: admin/settings]
+in APPPATH\Controllers\Admin\Settings.php on line 8.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(315): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Admin\\Settings.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\Settings')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\Settings')
+ 5 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Admin\\Settings', true)
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-01-23 05:22:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:22:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:22:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:22:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:22:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:22:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-01-23 05:22:48 --> Error: Class "App\Controllers\BaseAdminController" not found
+[Method: GET, Route: admin/settings]
+in APPPATH\Controllers\Admin\Settings.php on line 8.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(315): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Admin\\Settings.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\Settings')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\Settings')
+ 5 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Admin\\Settings', true)
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-01-23 05:24:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:27:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:27:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:28:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:28:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:29:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:31:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:31:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:31:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:33:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:33:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:35:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:36:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:36:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:36:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:43:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:43:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:43:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:43:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:45:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:45:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:46:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:46:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:47:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:47:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:49:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:49:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:49:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 05:49:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-01-23 05:57:18 --> ErrorException: Undefined property: App\Controllers\Booking::$settingModel
+[Method: GET, Route: booking/slots]
+in APPPATH\Controllers\Booking.php on line 75.
+ 1 APPPATH\Controllers\Booking.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Booking::$settingModel', 'C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Booking.php', 75)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Booking->slots()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 05:57:35 --> ErrorException: Undefined property: App\Controllers\Booking::$settingModel
+[Method: GET, Route: booking/slots]
+in APPPATH\Controllers\Booking.php on line 75.
+ 1 APPPATH\Controllers\Booking.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Booking::$settingModel', 'C:\\xampp\\htdocs\\SalonAppPHP\\app\\Controllers\\Booking.php', 75)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Booking->slots()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 06:00:56 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\SettingModel::getValue
+[Method: GET, Route: booking/slots]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\Booking.php(77): CodeIgniter\Model->__call('getValue', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Booking->slots()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 06:00:58 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\SettingModel::getValue
+[Method: GET, Route: booking/slots]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\Booking.php(77): CodeIgniter\Model->__call('getValue', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Booking->slots()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 06:01:06 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\SettingModel::getValue
+[Method: GET, Route: booking/slots]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\Booking.php(77): CodeIgniter\Model->__call('getValue', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Booking->slots()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 06:02:52 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\SettingModel::getValue
+[Method: GET, Route: booking/slots]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\Booking.php(77): CodeIgniter\Model->__call('getValue', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Booking->slots()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-23 06:03:03 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\SettingModel::getValue
+[Method: GET, Route: booking/slots]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\Booking.php(77): CodeIgniter\Model->__call('getValue', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Booking->slots()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-01-23 06:30:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 06:32:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 06:34:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 06:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 06:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 06:36:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 06:37:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 06:37:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 06:43:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 06:43:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 06:44:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 06:44:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 06:44:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 07:15:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 07:15:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 07:15:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 07:15:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 07:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 07:50:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 07:51:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 07:51:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 08:32:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 08:33:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 08:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 08:38:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 08:38:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 08:38:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 08:38:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 08:38:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 08:39:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 08:40:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 08:43:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 08:43:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-01-23 08:43:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

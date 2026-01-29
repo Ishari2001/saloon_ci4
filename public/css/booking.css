@@ -1,0 +1,32 @@
+.booking-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.booking-title {
+    color: #2563eb;
+    font-weight: 600;
+}
+.step {
+  width: 25%;
+  font-weight: 600;
+  color: #6b7280;
+}
+.step.active {
+  color: #2563eb;
+}
+.service-card {
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.service-card.active {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+.barber-card {
+  cursor: pointer;
+}
+.barber-card.active {
+  border: 2px solid #2563eb;
+}
