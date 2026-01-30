@@ -174,6 +174,33 @@ margin-top:15px;
   color: #333; /* text color, change as needed */
   white-space: nowrap; /* prevent text from breaking */
 }
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1.5s ease-in-out;
+    position: relative;
+}
+
+/* dark overlay */
+.hero::before {
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.text-shadow {
+    text-shadow: 0 3px 10px rgba(0,0,0,.6);
+}
+
 
     </style>
 
@@ -181,7 +208,7 @@ margin-top:15px;
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-<link rel="stylesheet" href="<?= base_url('assets/css/salon.css') ?>">
+<!-- <link rel="stylesheet" href="<?= base_url('assets/css/salon.css') ?>"> -->
 
 </head>
 
@@ -192,10 +219,10 @@ margin-top:15px;
   <div class="container">
 
     <!-- Logo -->
-    <a class="navbar-brand d-flex align-items-center" href="#">
-  <img src="<?= base_url('uploads/'.$system['logo']) ?>" height="50" alt="Logo" class="rounded me-2">
-  <span class="site-name"><?= esc($system['site_name']) ?></span>
-</a>
+    <a class="navbar-brand d-flex align-items-center" href="<?= base_url() ?>">
+      <img src="<?= base_url('uploads/'.$system['logo']) ?>" height="50" alt="Logo" class="rounded me-2">
+      <span class="site-name"><?= esc($system['site_name']) ?></span>
+    </a>
 
     <!-- Navbar Toggler for Mobile -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -205,28 +232,46 @@ margin-top:15px;
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-center gap-3">
-        <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#">Home</a></li>
-         <a class="nav-link text-dark fw-medium" href="<?= base_url('services') ?>">Services</a>
-        
+
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-medium" href="<?= base_url() ?>">Home</a>
+        </li>
+
+        <!-- Services -->
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-medium" href="<?= base_url('services') ?>">Services</a>
+        </li>
+
+        <!-- Gallery -->
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-medium" href="<?= base_url('gallery') ?>">Gallery</a>
+        </li>
+
+        <!-- Book Now Button -->
         <li class="nav-item">
           <a href="<?= base_url('booking') ?>" class="btn btn-primary rounded-pill px-4">Book Now</a>
         </li>
+
       </ul>
     </div>
 
   </div>
 </nav>
 
+
 <!-- HERO -->
-<section class="hero position-relative text-white" style="background: url('<?= base_url('uploads/hero.jpg') ?>') center/cover no-repeat; min-height: 90vh; display:flex; align-items:center;">
-  <div class="container text-center">
+<section id="hero" class="hero position-relative text-white">
+  <div class="container text-center hero-content">
     <h1 class="display-4 fw-bold text-shadow"><?= esc($system['site_name']) ?></h1>
     <p class="lead text-shadow mb-4">Luxury Beauty & Grooming Experience</p>
+
     <a href="<?= base_url('booking') ?>" class="btn btn-lg btn-primary rounded-pill shadow-lg">
       Book Appointment
     </a>
   </div>
 </section>
+
 
 
 <!-- SERVICES -->
@@ -370,6 +415,25 @@ Book your moment of luxury today.
 
 </footer>
 
+<script>
+const hero = document.getElementById("hero");
+
+const images = [
+    "<?= base_url('uploads/logoo.avif') ?>",
+    "<?= base_url('uploads/hero.jpg') ?>",
+    "<?= base_url('uploads/peedicure.webp') ?>"
+];
+
+let index = 0;
+
+// set first image
+hero.style.backgroundImage = `url(${images[0]})`;
+
+setInterval(() => {
+    index = (index + 1) % images.length;
+    hero.style.backgroundImage = `url(${images[index]})`;
+}, 4000); // 4 seconds
+</script>
 
 </body>
 </html>

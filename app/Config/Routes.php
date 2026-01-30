@@ -10,12 +10,7 @@ $routes->get('services', 'ServicesController::index');
 
 
 
-// $routes->get('/user', 'User::index');
-// $routes->post('/user/save', 'User::save');
-// $routes->get('/user/list', 'User::list');
-
 $routes->get('admin/dashboard', 'Admin\Dashboard::index');
-
 
 
 $routes->group('admin', function($routes) {
@@ -70,6 +65,18 @@ $routes->group('admin', function($routes) {
 });
 $routes->get('admin/settings', 'Admin\Settings::index');
 $routes->post('admin/settings/save', 'Admin\Settings::save');
+
+// Public gallery page
+$routes->get('gallery', 'Admin\Gallery::view');
+
+// Admin gallery routes
+$routes->group('admin', function($routes){
+    $routes->get('gallery', 'Admin\Gallery::index');      
+    $routes->post('gallery/upload', 'Admin\Gallery::upload'); 
+    $routes->get('gallery/delete/(:num)', 'Admin\Gallery::delete/$1');
+});
+
+
 
 
 $routes->get('superadmin', 'SuperAdminController::login');

@@ -12,6 +12,7 @@
             <th>Date</th>
             <th>Start</th>
             <th>End</th>
+            <th>Total Price</th> <!-- ✅ Added -->
             <th>Status</th>
             <th>Action</th>
         </tr>
@@ -28,6 +29,7 @@
             <td><?= $a['date'] ?></td>
             <td><?= $a['start_time'] ?></td>
             <td><?= $a['end_time'] ?></td>
+            <td>Rs <?= number_format($a['total_price'], 2) ?></td> <!-- ✅ Display total price -->
             <td>
                 <span class="badge <?= $a['status'] ?>">
                     <?= ucfirst($a['status']) ?>
@@ -35,22 +37,23 @@
             </td>
             <td>
                <form method="post" action="<?= base_url('admin/appointments/update/'.$a['id']) ?>" class="d-flex gap-2 align-items-center">
-    <?= csrf_field() ?>
-    
-    <select name="status" class="form-select form-select-sm status-select">
-        <option value="pending"    <?= $a['status']=='pending'?'selected':'' ?>>Pending</option>
-        <option value="confirmed"  <?= $a['status']=='confirmed'?'selected':'' ?>>Confirmed</option>
-        <option value="completed"  <?= $a['status']=='completed'?'selected':'' ?>>Completed</option>
-        <option value="cancelled"  <?= $a['status']=='cancelled'?'selected':'' ?>>Cancelled</option>
-    </select>
+                    <?= csrf_field() ?>
+                    
+                    <select name="status" class="form-select form-select-sm status-select">
+                        <option value="pending"    <?= $a['status']=='pending'?'selected':'' ?>>Pending</option>
+                        <option value="confirmed"  <?= $a['status']=='confirmed'?'selected':'' ?>>Confirmed</option>
+                        <option value="completed"  <?= $a['status']=='completed'?'selected':'' ?>>Completed</option>
+                        <option value="cancelled"  <?= $a['status']=='cancelled'?'selected':'' ?>>Cancelled</option>
+                    </select>
 
-    <button type="submit" class="btn btn-update">Update</button>
-</form>
+                    <button type="submit" class="btn btn-update">Update</button>
+                </form>
             </td>
         </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
+
 
 <style>
 /* Table container */

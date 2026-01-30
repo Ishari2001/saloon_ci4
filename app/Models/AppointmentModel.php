@@ -17,7 +17,8 @@ class AppointmentModel extends Model
         'date',
         'start_time',
         'end_time',
-        'status'
+        'status',
+        'total_price'
     ];
 
     protected $useTimestamps = true;     // ✅ REQUIRED

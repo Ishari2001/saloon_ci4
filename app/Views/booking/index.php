@@ -76,7 +76,7 @@ body{
 
 <!-- STEP 2: BARBER -->
 <div class="section">
-<h5>2️⃣ Choose Barber</h5>
+<h5>2️⃣ Choose Beautician</h5>
 <div id="barberList" class="row g-3 text-center">
     <div class="text-muted">Select a service first</div>
 </div>
@@ -88,7 +88,7 @@ body{
 <input type="date" id="bookDate" class="form-control mb-3">
 
 <div id="timeList" class="d-flex gap-2 flex-wrap">
-    <div class="text-muted">Select service, barber & date</div>
+    <div class="text-muted">Select service, beautician & date</div>
 </div>
 </div>
 
@@ -97,27 +97,28 @@ body{
 <div class="section">
     <h5>4️⃣ Confirm Booking</h5>
 
-    <div class="confirm-box mb-3">
-        <div id="cService">Service: —</div>
-        <div id="cBarber">Barber: —</div>
-        <div id="cDate">Date: —</div>
-        <div id="cTime">Time: —</div>
+   <div class="confirm-box mb-3">
+    <div id="cService">Service: —</div>
+    <div id="cBarber">Beautician: —</div>
+    <div id="cDate">Date: —</div>
+    <div id="cTime">Time: —</div>
+    <div id="cPrice" class="fw-bold">Price: Rs 0</div> <!-- NEW -->
 
-        <div class="mb-3">
-            <label for="cName" class="form-label">Name:</label>
-            <input type="text" id="cName" class="form-control" placeholder="Enter your name" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="cPhone" class="form-label">Phone:</label>
-            <input type="text" id="cPhone" class="form-control" placeholder="Enter your phone" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="cEmail" class="form-label">Email:</label>
-            <input type="email" id="cEmail" class="form-control" placeholder="Enter your email" required>
-        </div>
+    <div class="mb-3">
+        <label for="cName" class="form-label">Name:</label>
+        <input type="text" id="cName" class="form-control" placeholder="Enter your name" required>
     </div>
+
+    <div class="mb-3">
+        <label for="cPhone" class="form-label">Phone:</label>
+        <input type="text" id="cPhone" class="form-control" placeholder="Enter your phone" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="cEmail" class="form-label">Email:</label>
+        <input type="email" id="cEmail" class="form-control" placeholder="Enter your email" required>
+    </div>
+</div>
 
     <button class="btn btn-success w-100 py-2" onclick="confirmBooking()">
         ✅ Confirm Appointment
@@ -138,33 +139,41 @@ let selectedBarberName = '';
 let selectedTime = null;
 
 /* ===================== LOAD SERVICES ===================== */
-function loadServices(){
+function loadServices() {
     fetch("<?= base_url('booking/services') ?>")
-    .then(r=>r.json())
-    .then(services=>{
-        serviceList.innerHTML='';
-        services.forEach(s=>{
-            serviceList.innerHTML += `
-            <div class="col-md-4">
-                <div class="card card-item p-2"
-                     onclick="selectService(${s.id},'${s.name}',${s.duration_minutes},${s.seat_count || 1},this)">
+        .then(r => r.json())
+        .then(services => {
+            serviceList.innerHTML = '';
+            services.forEach(s => {
+                serviceList.innerHTML += `
+                <div class="col-md-4">
+                    <div class="card card-item p-2"
+                         onclick="selectService(${s.id}, '${s.name}', ${s.duration_minutes}, ${s.seat_count || 1}, this, ${s.price})">
 
-                    <img src="<?= base_url('uploads/services/') ?>${s.image}"
-                         class="img-fluid rounded mb-2"
-                         style="height:140px;object-fit:cover"
-                         onerror="this.src='<?= base_url('uploads/no-image.png') ?>'">
+                        <img src="<?= base_url('uploads/services/') ?>${s.image}"
+                             class="img-fluid rounded mb-2"
+                             style="height:140px; object-fit:cover"
+                             onerror="this.src='<?= base_url('uploads/no-image.png') ?>'">
 
-                    <h6 class="fw-bold">${s.name}</h6>
-                    <small>${s.duration_minutes} min | Seats: ${s.seat_count || 1}</small>
-                    <div class="fw-bold">Rs ${s.price}</div>
-                </div>
-            </div>`;
+                        <h6 class="fw-bold">${s.name}</h6>
+                        <small>${s.duration_minutes} min | Seats: ${s.seat_count || 1}</small>
+                        <div class="fw-bold">Rs ${s.price}</div>
+                    </div>
+                </div>`;
+            });
+        })
+        .catch(err => {
+            console.error("Failed to load services:", err);
+            serviceList.innerHTML = '<div class="text-danger">Failed to load services. Please try again later.</div>';
         });
-    });
 }
 
+
 /* ===================== SELECT SERVICE ===================== */
-function selectService(id,name,duration,seats,el){
+
+let selectedPrice = 0;
+
+function selectService(id, name, duration, seats, el, price){
     document.querySelectorAll('.card-item').forEach(c=>c.classList.remove('active'));
     el.classList.add('active');
 
@@ -172,8 +181,11 @@ function selectService(id,name,duration,seats,el){
     selectedServiceName = name;
     selectedDuration = duration;
     selectedSeats = seats;
+    selectedPrice = price; // set selected price
 
     cService.innerText = "Service: " + name;
+    cPrice.innerText   = "Price: Rs " + price; // update UI
+
     barberList.innerHTML = '<div class="text-muted">Loading barbers...</div>';
     timeList.innerHTML = '<div class="text-muted">Select barber & date</div>';
 

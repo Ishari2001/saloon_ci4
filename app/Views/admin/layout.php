@@ -63,6 +63,12 @@
             <i class="fa fa-calendar-check me-2"></i> Create Admin
         </a>
 
+              <a href="<?= site_url('admin/gallery') ?>" class="<?= uri_string() == 'admin/appointments' ? 'active' : '' ?>">
+            <i class="fa fa-calendar-check me-2"></i> Manage Gallery
+        </a>
+
+        
+
         <!-- Settings link -->
         <a href="<?= site_url('admin/settings') ?>" class="<?= uri_string() == 'admin/settings' ? 'active' : '' ?>">
             <i class="fa fa-cogs me-2"></i> Settings

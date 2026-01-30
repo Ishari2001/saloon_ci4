@@ -148,7 +148,6 @@ foreach ($appointments as $a) {
 
     // STEP 4: Confirm booking
  
-
 public function confirm()
 {
     $data = $this->request->getJSON(true);
@@ -158,11 +157,13 @@ public function confirm()
 
     $serviceModel = new \App\Models\ServiceModel();
     $totalMinutes = 0;
+    $totalPrice = 0; // ✅ total price
 
     foreach ($serviceIds as $sid) {
         $service = $serviceModel->find($sid);
         if ($service) {
-            $totalMinutes += (int)$service['duration_minutes']; // ✅ fixed
+            $totalMinutes += (int)$service['duration_minutes'];
+            $totalPrice   += (float)$service['price']; // ✅ sum price
         }
     }
 
@@ -171,7 +172,7 @@ public function confirm()
         strtotime("+{$totalMinutes} minutes", strtotime($startTime))
     );
 
-    // Insert into appointments table
+    // Insert into appointments table including total_price
     $appointmentModel = new \App\Models\AppointmentModel();
     $appointmentId = $appointmentModel->insert([
         'customer_name' => $data['name'],
@@ -181,7 +182,8 @@ public function confirm()
         'date'          => $data['date'],
         'start_time'    => $startTime,
         'end_time'      => $endTime,
-        'status'        => 'pending'
+        'status'        => 'pending',
+        'total_price'   => $totalPrice  // ✅ save total price
     ]);
 
     // Insert into appointment_services table
@@ -193,18 +195,20 @@ public function confirm()
         ]);
     }
 
-      if (!empty($data['email'])) {
-            $this->sendPendingEmail([
-                'customer_name'  => $data['name'],
-                'customer_email' => $data['email'],
-                'date'           => $data['date'],
-                'time'           => $startTime,
-            ]);
-        }
+    if (!empty($data['email'])) {
+        $this->sendPendingEmail([
+            'customer_name'  => $data['name'],
+            'customer_email' => $data['email'],
+            'date'           => $data['date'],
+            'time'           => $startTime,
+            'total_price'    => $totalPrice // optional to include in email
+        ]);
+    }
 
     return $this->response->setJSON([
         'status' => true,
-        'message' => 'Appointment booked successfully'
+        'message' => 'Appointment booked successfully',
+        'total_price' => $totalPrice // send back to frontend if needed
     ]);
 }
 
